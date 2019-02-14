@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sort</title>
+</head>
+<body>
+	<script>
+		
+	</script>
+	<script>
+		// 冒泡排序
+		var bubbleArray = [2, 3, 1, 4, 6, 5, 7, 8, 10, 9]
+		function bubbleSort(arr) {
+			var len = arr.length;
+			for (var i = 0; i < len; i++) {
+				var jLen = len - i -1;
+				for (var j = 0; j < jLen; j++) {
+					if (arr[j] > arr[j + 1]) {
+						var temp = arr[j]
+						arr[j] = arr[j + 1]
+						arr[j + 1] = temp
+					}
+				}
+			}
+			return arr;
+		}
+		console.log(bubbleSort(bubbleArray))
+	</script>
+	<script>
+		// 快速排序
+		var quickArray = [2, 3, 1, 4, 6, 5, 7, 8, 10, 9]
+		function quickSort(arr) {
+			var len = arr.length;
+			for (var i = 0; i < len; i++) {
+				for (var j = i; j < len; j++) {
+					if (arr[i] > arr[j]) {
+						var temp = arr[i]
+						arr[i] = arr[j]
+						arr[j] = temp
+					}
+				}
+			}
+			return arr;
+		}
+		console.log(quickSort(quickArray))
+	</script>
+	<script>
+		// 快速排序
+		var selectArray = [2, 3, 1, 4, 6, 5, 7, 8, 10, 9]
+		function selectSort(arr) {
+			var len = arr.length;
+			for (var i = 0; i < len; i++) {
+				var item = arr[i]
+				var temp = i
+				for (var j = i; j < len; j++) {
+					if (item > arr[j]) {
+						item = arr[j]
+						temp = j
+					}
+				}
+				arr[temp] = arr[i]
+				arr[i] = item
+				
+			}
+
+			return arr;
+		}
+		console.log(selectSort(selectArray))
+	</script>
+</body>
+</html>
